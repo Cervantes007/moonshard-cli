@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/Cervantes007/moonshard-cli/compare/v1.0.1...v1.1.0) (2020-07-25)
+
+
+### Features
+
+* **package manager:** prefer npm or yarn as package manager ([4b7ad2d](https://github.com/Cervantes007/moonshard-cli/commit/4b7ad2d22b126d9c9c40fdf09971beaa656aed92))
+
 ## [1.0.1](https://github.com/Cervantes007/moonshard-cli/compare/v1.0.0...v1.0.1) (2020-07-25)
 
 
