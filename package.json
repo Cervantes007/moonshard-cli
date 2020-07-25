@@ -8,6 +8,7 @@
   "repository": "git@github.com:Cervantes007/moonshard-cli.git",
   "license": "MIT",
   "scripts": {
+    "commit": "git-cz",
     "semver": "semantic-release"
   },
   "config": {
