@@ -1,6 +1,6 @@
 {
   "name": "moonshard-cli",
-  "version": "1.0.0",
+  "version": "0.0.0-semantically-released",
   "main": "main.js",
   "bin": {
     "moonshard": "./bin/moonshard.js"
