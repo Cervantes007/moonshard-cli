@@ -30,7 +30,7 @@ export async function createProject(options) {
   const spinner = ora('Installing dependencies').start();
   await projectInstall({
     cwd: options.targetDirectory,
-    prefer: 'yarn',
+    prefer: options.pm || 'yarn',
   });
   spinner.stop();
   console.log(chalk.blue('-----------------Welcome to get started run:---------------------'));
