@@ -3,27 +3,45 @@ import { createProject } from './main';
 import chalk from 'chalk';
 
 export async function cli(rawArgs) {
-  const options = await promptForOptions();
+  const args = rawArgs.splice(2);
+  console.log(args);
+  let name;
+  if (args.length > 0) {
+    name = args[0];
+  }
+  const options = await promptForOptions({ name });
   await createProject(options);
 }
 
 async function promptForOptions(options = {}) {
   const questions = [];
 
+  if (!options.name) {
+    questions.push({
+      type: 'text',
+      name: 'name',
+      message: 'Please enter the project name:',
+    });
+  }
+
   questions.push({
-    type: 'text',
-    name: 'name',
-    message: 'Please enter the project name:',
+    type: 'list',
+    name: 'pm',
+    message: 'Select package manager:',
+    choices: ['npm', 'yarn'],
+    default: 'npm',
   });
 
   const answers = await inquirer.prompt(questions);
-  if (!answers.name) {
+  const name = options.name || answers.name;
+  if (!name) {
     console.error('%s Project name is required', chalk.red.bold('ERROR:'));
     process.exit(1);
   }
   return {
-    name: answers.name,
+    name: name,
+    pm: answers.pm,
     template: 'typescript',
-    targetDirectory: options.targetDirectory || `${process.cwd()}/${answers.name}`,
+    targetDirectory: options.targetDirectory || `${process.cwd()}/${name}`,
   };
 }
