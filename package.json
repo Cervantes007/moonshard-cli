@@ -23,7 +23,7 @@
     "ncp": "^2.0.0",
     "ora": "^4.0.5",
     "pkg-install": "^1.0.0",
-    "shelljs": "^0.8.4"
+    "shelljs": "^0.8.5"
   },
   "devDependencies": {
     "@semantic-release/changelog": "^5.0.1",
